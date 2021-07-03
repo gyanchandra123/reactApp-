@@ -25,12 +25,12 @@ function Greeting() {
 
  
 
-const Book = (props) => {
+const Book = ({img,title,author}) => {
   return (
     <article className="book">
-      <img src={props.img} alt="images" />
-      <h4>{props.title}</h4>
-      <h5>{props.author}</h5>
+      <img src={img} alt="images" />
+      <h4>{title}</h4>
+      <h5>{author}</h5>
     </article>
   );
 };
@@ -40,8 +40,8 @@ ReactDOM.render(<Greeting />, document.getElementById("root"));
 
 
 //wrong way:
-/* 
-import React from "react";
+ 
+/* import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
 
@@ -67,7 +67,7 @@ function Greeting() {
 }
 
 const Book = (props) => {
-  const [firstObj, secondObj] = props;
+  const {firstObj, secondObj} = props;
   return (
     <article className="book">
       <img src={firstObj.img || secondObj.img} alt="images" />
@@ -77,5 +77,5 @@ const Book = (props) => {
   );
 };
 
-ReactDOM.render(<Greeting />, document.getElementById("root"));
- */
+ReactDOM.render(<Greeting />, document.getElementById("root")); */
+ 
