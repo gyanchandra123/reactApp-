@@ -1,17 +1,29 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React from "react";
+import ReactDOM from "react-dom";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+function Greeting() {
+  return (
+    <div>
+      <FirstComp />
+      <SecondComp />
+    </div>
+  );
+}
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+const FirstComp = () => <h4>this is gyan and this is my first component</h4>;
+
+const SecondComp = () => <h4>this is gyan and this is my Second component</h4>;
+
+/* const Greeting = () => {
+  return React.createElement(
+    "div",
+    null,
+    React.createElement(
+      "h2",
+      { id: "heading" },
+      "creating functional component through arrow function"
+    )
+  );
+}; */
+
+ReactDOM.render(<Greeting />, document.getElementById("root"));
