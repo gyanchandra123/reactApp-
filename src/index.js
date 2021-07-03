@@ -5,31 +5,25 @@ import './index.css'
 function Greeting() {
   return (
     <section className='booklist'>
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
-      <Book />
+      <Book /> 
     </section>
   );
 }
 
+const author = 'Michael Knowles'
+
 const Book = () => {
+  const title ='Controlling MindsSpeechless';
   return (
     <article className='book'>
-      <Image />
-      <Title />
-      <Author/>
+      <img src="https://images-na.ssl-images-amazon.com/images/I/41JIh4KMHRL._AC_SX184_.jpg" alt="book"></img> 
+      <h4>{title}</h4>
+      <h5>{author.toUpperCase()}</h5>
     </article>
   );
 };
  
-const Image = () => <img src="https://images-na.ssl-images-amazon.com/images/I/41JIh4KMHRL._AC_SX184_.jpg" alt="book"></img> 
-    
-const Title = () => <h4> Controlling MindsSpeechless </h4>
-const Author = () => <h4>Michael Knowles</h4>
+ 
  
 
 ReactDOM.render(<Greeting />, document.getElementById("root"));
