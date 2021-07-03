@@ -1,29 +1,35 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import './index.css'
 
 function Greeting() {
   return (
-    <div>
-      <FirstComp />
-      <SecondComp />
-    </div>
+    <section className='booklist'>
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+      <Book />
+    </section>
   );
 }
 
-const FirstComp = () => <h4>this is gyan and this is my first component</h4>;
-
-const SecondComp = () => <h4>this is gyan and this is my Second component</h4>;
-
-/* const Greeting = () => {
-  return React.createElement(
-    "div",
-    null,
-    React.createElement(
-      "h2",
-      { id: "heading" },
-      "creating functional component through arrow function"
-    )
+const Book = () => {
+  return (
+    <article className='book'>
+      <Image />
+      <Title />
+      <Author/>
+    </article>
   );
-}; */
+};
+ 
+const Image = () => <img src="https://images-na.ssl-images-amazon.com/images/I/41JIh4KMHRL._AC_SX184_.jpg" alt="book"></img> 
+    
+const Title = () => <h4> Controlling MindsSpeechless </h4>
+const Author = () => <h4>Michael Knowles</h4>
+ 
 
 ReactDOM.render(<Greeting />, document.getElementById("root"));
