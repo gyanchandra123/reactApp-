@@ -4,7 +4,7 @@ import "./index.css";
 
 const firstBook = {
   title: "Controlling MindsSpeechless",
-  img: 'https://images-na.ssl-images-amazon.com/images/I/41JIh4KMHRL._AC_SX184_.jpg',
+  img: "https://images-na.ssl-images-amazon.com/images/I/41JIh4KMHRL._AC_SX184_.jpg",
   author: "Michael Knowles",
 };
 
@@ -17,30 +17,42 @@ const secondBook = {
 function Greeting() {
   return (
     <section className="booklist">
-      <Book img={firstBook.img} title={firstBook.title} author={firstBook.author}/>
-      <Book img={secondBook.img} title={secondBook.title} author={secondBook.author}/>
+      <Book
+        img={firstBook.img}
+        title={firstBook.title}
+        author={firstBook.author}
+      >
+        <p>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+          eiusmod tempor incididunt ut labore et dolore magna aliqua. Augue
+          lacus viverra vitae congue eu.
+        </p>
+      </Book>
+      <Book
+        img={secondBook.img}
+        title={secondBook.title}
+        author={secondBook.author}
+      />
     </section>
   );
 }
 
- 
-
-const Book = ({img,title,author}) => {
+const Book = ({ img, title, author,children}) => { 
+  // here the children: must maintain unique name
   return (
     <article className="book">
       <img src={img} alt="images" />
       <h4>{title}</h4>
       <h5>{author}</h5>
+      {children}
     </article>
   );
 };
 
 ReactDOM.render(<Greeting />, document.getElementById("root"));
 
-
-
 //wrong way:
- 
+
 /* import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
@@ -78,4 +90,3 @@ const Book = (props) => {
 };
 
 ReactDOM.render(<Greeting />, document.getElementById("root")); */
- 
