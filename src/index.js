@@ -20,14 +20,12 @@ const books = [
 function Greeting() {
   return (
     <section className="booklist"> 
-     { books.map(book => <Book key={book.id} books={book}/>)} 
+     { books.map(book => <Book key={book.id} {...book}/>)} 
     </section>
   );
 }
 
-const Book = (props) => { 
-  console.log(props)
-  const {img,title,author}= props.books;
+const Book = ({img,title,author}) => {  
   return (
     <article className="book">
       <img src={img} alt="images" />
