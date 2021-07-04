@@ -4,11 +4,13 @@ import "./index.css";
 
 const books = [
   {
+    id:1,
     title: "Controlling MindsSpeechless",
     img: "https://images-na.ssl-images-amazon.com/images/I/41JIh4KMHRL._AC_SX184_.jpg",
     author: "Michael Knowles",
   },
   {
+    id:2,
     title: "The 48 Laws of Power",
     img: "https://images-na.ssl-images-amazon.com/images/I/517s9eYVoHS._AC_SX184_.jpg",
     author: "Robert Greene",
@@ -18,7 +20,7 @@ const books = [
 function Greeting() {
   return (
     <section className="booklist"> 
-     { books.map(book => <Book books={book}/>)} 
+     { books.map(book => <Book key={book.id} books={book}/>)} 
     </section>
   );
 }
